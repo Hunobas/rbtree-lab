@@ -4,9 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define COUNT 3
-
-// bs트리 생성()
+// bs트리 생성
 // -> bstree 포인터 반환
 bstree* new_bstree(void) {
 	bstree* p = (bstree*)calloc(1, sizeof(bstree));
@@ -38,7 +36,7 @@ void delete_bstree(bstree* t) {
 // bs트리에 노드 삽입(bstree 포인터, 삽입할 값)
 // -> bstree의 루트 노드 포인터 반환
 node_t* bstree_insert(bstree* t, const key_t key) {
-	if (t == NULL || t->root == NULL)
+	if (t == NULL)
 		t = new_bstree();
 
 	node_insert(t, &(t->root), NULL, key);
@@ -251,34 +249,4 @@ int bstree_to_array(const bstree* t, key_t* arr, const size_t n) {
 
 	make_inorder_array(t, arr, t->root, 0);
 	return 0;
-}
-
-
-// 중위순회 재귀 프린트(bstree 포인터, 노드 포인터, 간격)
-// ->
-void print2DUtil(bstree* t, node_t* node, int space)
-{
-	if (node == NULL)
-		return;
-
-	space += COUNT;
-
-	print2DUtil(t, node->right, space);
-
-	printf("\n");
-	for (int i = COUNT; i < space; i++)
-		printf(" ");
-	if (node == t->nil)
-		printf(".");
-	else
-		printf("%d\n", node->key);
-
-	print2DUtil(t, node->left, space);
-}
-
-// 재귀 프린트 트리거(bstree 포인터)
-// ->
-void print2D(bstree* t)
-{
-	print2DUtil(t, t->root, 0);
 }

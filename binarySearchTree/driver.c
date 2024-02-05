@@ -1,9 +1,12 @@
 #include "bstree.h"
+#include "bstreeNode.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char *argv[]) {
+#define MAX_DEPTH 5
+
+int main() {
 	// Test the print_bstree function
 	bstree* myTree = new_bstree();
 
@@ -12,8 +15,8 @@ int main(int argc, char *argv[]) {
 	key_t* init_arr;
 	while (1)
 	{
-		print2D(myTree);
-		printf("\n\nlength: %ld\n", myTree->len);
+		visualize_tree(myTree, MAX_DEPTH);
+		printf("\n\nlength: %d\n", myTree->len);
 		printf("\n1.Insert Operation\n");
 		printf("2.Erase Operation\n");
 		printf("3.Find Operation\n");

@@ -29,8 +29,4 @@ int bstree_rotateL(bstree*, node_t*);
 
 int bstree_to_array(const bstree*, key_t* arr, const size_t);
 
-//// 프린트 함수
-void print2D(bstree* t);
-void print2DUtil(bstree* t, node_t* node, int space);
-
 #endif  // _BSTREE_H_
