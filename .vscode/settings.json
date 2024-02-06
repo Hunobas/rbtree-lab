@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "bstreenode.h": "c",
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "bstree.h": "c",
+        "rbtree.h": "c",
+        "stdbool.h": "c"
+    }
+}
